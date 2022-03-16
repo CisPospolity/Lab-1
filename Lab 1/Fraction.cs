@@ -18,12 +18,21 @@ namespace Lab_1
             denominator = 1;
         }
 
+        /// <summary>
+        /// Creates new fraction using two specified numbers
+        /// </summary>
+        /// <param name="counter"></param>
+        /// <param name="denominator"></param>
         public Fraction(int counter, int denominator)
         {
             this.counter = counter;
             this.denominator = denominator;
         }
 
+        /// <summary>
+        /// Creates new fraction using another fraction
+        /// </summary>
+        /// <param name="oldFraction"></param>
         public Fraction(Fraction oldFraction)
         {
             this.counter = oldFraction.GetCounter();
@@ -79,11 +88,19 @@ namespace Lab_1
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Returns smallest integral value that is greater or equal to the fraction
+        /// </summary>
+        /// <returns></returns>
         public int Ceiling()
         {
             return (int)MathF.Ceiling(ToDecimals());
         }
 
+        /// <summary>
+        /// Returns largest integral value that is smaller or equal to the fraction
+        /// </summary>
+        /// <returns></returns>
         public int Floor()
         {
             return (int)MathF.Floor(ToDecimals());
