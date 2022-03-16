@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Collections.Generic;
 
 namespace Lab_1
 {
@@ -64,7 +65,7 @@ namespace Lab_1
         /// </summary>
         public float ToDecimals()
         {
-            return GetCounter() / GetDenominator();
+            return (float)GetCounter() / (float)GetDenominator();
         }
 
         public int CompareTo(object obj)
@@ -104,7 +105,28 @@ namespace Lab_1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<Fraction> fractionList = new List<Fraction>();
+            Fraction f1 = new Fraction(1, 2);
+            Fraction f2 = new Fraction(1, 3);
+            Fraction f3 = new Fraction(1, 4);
+
+            fractionList.Add(f2);
+            fractionList.Add(f3);
+            fractionList.Add(f1);
+
+            Console.WriteLine("Before sorting:");
+            foreach(Fraction f in fractionList)
+            {
+                Console.WriteLine(f.ToString());
+            }
+
+            Console.WriteLine("\n After sorting:");
+            fractionList.Sort();
+            foreach (Fraction f in fractionList)
+            {
+                Console.WriteLine(f.ToString());
+            }
+            Console.ReadKey();
         }
     }
 }
